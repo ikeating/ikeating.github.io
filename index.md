@@ -3,8 +3,7 @@
 
 
 <body>
-Hello folks, My name is Isaiah Keating!<br>
-I hope you have a great vist....
+Hello folks, My name is Isaiah Keating and welcome<br>to my first github page!
 </body>
 
 
