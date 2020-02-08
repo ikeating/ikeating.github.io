@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Yo"
-date:   2020-02-07 12:52:13 -0600
+title:  "iBlog 0x01"
+date:   2020-02-06
 categories: jekyll update
 ---
 C code example
