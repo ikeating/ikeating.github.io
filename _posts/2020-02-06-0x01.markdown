@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "Yo"
+date:   2020-02-07 12:52:13 -0600
+categories: jekyll update
+---
+C code example
+
+{% highlight c %}
+#import <stdio.h>
+
+int main()
+{
+
+return(0);
+}
+{% endhighlight %}
+
