@@ -28,7 +28,7 @@ twitter_username: keating_isaiah
 github_username:  ikeating
 
 # Build settings
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
