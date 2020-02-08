@@ -21,7 +21,7 @@
 title: iBlog
 email: ik@ikeating.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hello, my name is Isaiah Keating and this is my iBlog.
+  Hello, my name is Isaiah Keating and this is iBlog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: keating_isaiah
