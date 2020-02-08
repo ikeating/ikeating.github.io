@@ -4,15 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+My name is Isaiah Keating, and I am currently residing with my wife, one kid, and a dog in
+Canby, MN. I received my AAS in Law Enforcement from Hibbing Tech in 1995 and just 
+recently received my Liberal Arts degree from Minnesota West.  I have been working as a 
+full-time peace officer in Minnesota for twenty-three years. I’ve held the position of 
+Chief of Police for the City of Canby, MN since 2000.  I am currently attending DSU to 
+obtain a BS in computer science.  My hobbies include scuba, ham radio, electronics and 
+monkeying around with microcontrollers.  
