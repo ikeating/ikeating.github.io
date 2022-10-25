@@ -7,3 +7,6 @@ layout: home
 
 
 Welcome to iBlog!
+
+GPTempDownload.jpg
+![This is an image](https://github.com/ikeating/ikeating.github.io/blob/master/GPTempDownload.jpg)
