@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Useful Commands and Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #e8e8e8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        a {
+            color: #007BFF;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Useful Tools and Commands</h1>
+
+    <h2>Editors and Tools for Different Platforms</h2>
+    <p>Here are some useful editors and compilers for different operating systems:</p>
+
+    <ul>
+        <li><strong>For Mac OS:</strong>
+            <ul>
+                <li>VS Code</li>
+                <li>Xcode (for clang++, g++, and lldb debugger)</li>
+                <li>Kdbg (Linux debugger)</li>
+                <li>Gnu (for compiling and make)</li>
+                <li>Sublime (text editor)</li>
+            </ul>
+        </li>
+        <li><strong>For Windows:</strong>
+            <ul>
+                <li>Sublime</li>
+                <li>Cygwin terminal</li>
+                <li>Visual C++</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>Useful Links</h2>
+    <ul>
+        <li><a href="https://www3.nd.edu/~dthain/courses/cse20211/fall2013/gfx/" target="_blank">Graphics Library Example (Notre Dame)</a></li>
+        <li><a href="https://www.xquartz.org" target="_blank">XQuartz (Mac OS X X11 server)</a></li>
+        <li><a href="https://www.llvm.org" target="_blank">LLVM Project</a></li>
+    </ul>
+
+    <h2>GCC Example Command</h2>
+    <pre>gcc example.c gfx.c -o example -I/usr/X11R6/include -L/usr/X11R6/lib -lX11 -lm</pre>
+
+    <h2>Copy Files Using SSH</h2>
+    <p>Here are the commands to copy files between local and remote systems using SSH:</p>
+
+    <h3>Single File</h3>
+    <pre>scp /path/to/local/file username@hostname:/path/to/remote/file</pre>
+    <pre>scp username@hostname:/path/to/remote/file /path/to/local/file</pre>
+
+    <h3>Directory</h3>
+    <p>To copy a directory, use the <code>-r</code> flag:</p>
+    <pre>scp -r pi@raspberrypi:/home/pi/Desktop/csc250DT2 /Users/isaiahkeating/Desktop</pre>
+
+</body>
+</html>
