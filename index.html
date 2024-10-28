@@ -1,44 +1,119 @@
-<!--
-iKeating landing page
--->
+<!-- iKeating Landing Page -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Isaiah Keating</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Isaiah Keating</title>
+  <style>
+    /* General Styling */
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+      color: #f0f0f0;
+      font-family: 'Arial', sans-serif;
+    }
 
+    /* Glowing Header */
+    h1 {
+      text-align: center;
+      font-size: 70px;
+      margin: 20px 0;
+      color: #00ffff;
+      text-shadow: 0px 0px 20px #00ffff, 0px 0px 30px #00ffff;
+      animation: glow 2s infinite alternate;
+    }
+
+    /* Navbar Links Styling */
+    p a {
+      color: #66b3ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    p a:hover {
+      color: #00ffcc;
+    }
+
+    /* GitHub Icon */
+    .github-icon {
+      margin-top: 20px;
+      transition: transform 0.3s;
+    }
+    .github-icon:hover {
+      transform: scale(1.2);
+    }
+
+    /* Centered iframe for Lichess */
+    iframe {
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #444;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px 0;
+      background: #141414;
+      color: #666;
+    }
+
+    /* Button Glow Effect */
+    @keyframes glow {
+      from {
+        text-shadow: 0px 0px 10px #00ffff, 0px 0px 30px #00ffff;
+      }
+      to {
+        text-shadow: 0px 0px 30px #00ffcc, 0px 0px 50px #00ffcc;
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 50px;
+      }
+      iframe {
+        width: 300px;
+        height: 333px;
+      }
+      p {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<h1 style="text-align:center;background-color:white;font-size: 70px">iBlog
+  <h1>iBlog</h1>
 
-</h1>
+  <center>
+    <a href="https://github.com/ikeating" target="_blank">
+      <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
+           alt="GitHub" class="github-icon" style="width: 50px; height: 50px;">
+    </a>
+  </center>
 
-<center><a href="https://github.com/ikeating" target="_blank">
-   <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width:40px; height:40px;">
-</a>
-</center>
+  <p style="font-size: 25px; text-align: center; margin: 40px;">
+    <strong>About me!</strong> <a href="about">About</a> <br><br>
+    <strong>Andrew's</strong> <a href="grband">Grand Rapids High School Marching Band</a> Page <br><br>
+    <strong>Our</strong> <a href="seattle2024">Seattle 2024</a> Trip <br><br>
+    <strong>Notes on</strong> <a href="tools_commands">Useful Tools And Commands</a>
+  </p>
 
-<p style="font-size: 25px; font-family: Times New Roman; margin-left: 40px;margin-right: 40px;">
+  <center>
+    <iframe src="https://lichess.org/training/frame?theme=brown&bg=dark" 
+            style="width: 400px; height: 444px;" allowtransparency="true" frameborder="0">
+    </iframe>
+  </center>
 
-<BR><BR/>
-	About me! <a href="about">About</a>
-<BR><BR/>
-	Andrew's <a href="grband">Grand Rapids High School Marching Band</a> Page
-<BR><BR/>
-	Our <a href="seattle2024">Seattle 2024</a> Trip
-<BR><BR/>
-	Notes on <a href="tools_commands">Useful Tools And Commands</a>
-</p>
+  <footer>
+    © 2024. This work by Isaiah Keating is openly licensed via 
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/" style="color: #f0f0f0;">CC BY-SA 4.0</a>
+  </footer>
 
-<center><iframe src="https://lichess.org/training/frame?theme=brown&bg=dark" style="width: 400px; height: 444px;" allowtransparency="true" frameborder="0"></iframe></center>
-
-<p style="font-size: 25px; font-family: Times New Roman; margin-left: 40px;margin-right: 40px;">
-
-© 2024. This work by Isaiah Keating is openly licensed via <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
-<BR><BR/>
-
-</p>
 </body>
 </html>
-
