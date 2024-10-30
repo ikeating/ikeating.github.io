@@ -1,0 +1,88 @@
+<!-- <center><img src="/Seattle_2024/IMG_1513.jpeg" alt="Seattle_2024/IMG_1513.jpeg" width="300" height="400"></center> -->
+
+<!-- <a href="https://address.com">Label</a> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01/05/2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        Back to <a href="index">Homepage</a>
+
+        <h1>iBlog</h1>
+
+        <h2>01/05/2024</h2>
+        <p>05/01/2024 Connecting TFT FeatherWing V0 # 3315 to Arduino Uno</p>
+
+<p>I wanted to use a SD card inserted into the TFT Featherwing to display an image using an Arduino Uno instead of the Featherwing 32u4.  One of the reasons for doing this was to split up memory between the Arduino and Feather.  The point of this writing is to simply show that I was able to connect the Arduino to the TFT Featherwing.</p>
+<p>The ATmega328P has a flash memory of 32 KB of which 0.5 KB used by bootloader and has 2K of SRAM.  The Feather ATmega32u4 has 32K of flash memory and 2K of RAM.  The following is the pinout for connecting the Arduino to the TFT Featherwing.</p>
+<p>
+                Uno Pin #   TFT Pin<br>
+                5       -->   SD<br>
+                6       -->   RT<br>
+                9       -->   TFT<br>
+                10      -->   TFTDC<br>
+                11      -->   MOSI<br>
+                12      -->   MISO<br>
+                13      -->   SCK<br>
+</p>
+    <p>In conclusion, I’m not sure what I would use this configuration for.  The idea of splitting up tasks/memory between microcontrollers was the driving force behind this exorcise.
+</p>
+        
+        <p>End of blog. Thank you for reading!</p>
+
+        Back to <a href="index">Homepage</a><br><br>
+
+        © 2024. This work by Isaiah Keating is openly licensed via <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    </div>
+</body>
+
+</html>
