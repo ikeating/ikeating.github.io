@@ -52,6 +52,26 @@
       box-shadow: 0 0 15px #444;
     }
 
+      /* Container for the iframe to control its responsiveness */
+  .responsive-frame-container {
+    width: 100%;
+    max-width: 415px; /* Ensures it doesn’t exceed the original width on larger screens */
+    margin: 0 auto; /* Center it on the page */
+  }
+
+  /* Make iframe responsive */
+  .responsive-frame-container iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Media query for very small screens */
+  @media only screen and (max-width: 600px) {
+    .responsive-frame-container iframe {
+      height: 180px; /* Adjust the height for smaller screens */
+    }
+  }
+
     /* Footer */
     footer {
       text-align: center;
@@ -102,7 +122,11 @@
 
     <strong>About <a href="about">Isaiah Keating</a>!</strong><br><br>
 
-    <iframe src="https://gravatar.com/isaiahkeating.card" width="415" height="228" style="border:0; margin:0; padding:0;"></iframe>
+    <!--<iframe src="https://gravatar.com/isaiahkeating.card" width="415" height="228" style="border:0; margin:0; padding:0;"></iframe>-->
+
+    <div class="responsive-frame-container">
+  <iframe src="https://gravatar.com/isaiahkeating.card" style="border:0; margin:0; padding:0;"></iframe>
+</div>
 
     <p style="font-size: 20px; text-align: left; margin: 40px;">
 
