@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display NFT</title>
+    <title>Display Your NFT</title>
     <style>
         body { text-align: center; font-family: Arial, sans-serif; }
         img { max-width: 400px; border: 1px solid #ddd; border-radius: 8px; margin-top: 20px; }
     </style>
 </head>
 <body>
-    <h1>Display Your NFT</h1>
+    <h1>Your NFT Display</h1>
     <div id="nft-container">
         <img id="nft-image" alt="NFT Image" />
         <p id="nft-name"></p>
+        <p id="nft-description"></p>
     </div>
 
     <script>
-        const contractAddress = 0x1137a52e42aa5c26fcee4e90bebf4bb963ba79d9;
-        const tokenId = 1994;
+        const contractAddress = '0x1137a52e42aa5c26fcee4e90bebf4bb963ba79d9';
+        const tokenId = '1994';
         
         async function fetchNFT() {
             try {
-                const response = await fetch(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}`);
+                // Fetch the NFT data using OpenSea API
+                const response = await fetch(`https://api.opensea.io/api/v1/asset/${contractAddress}/${tokenId}/`);
                 const data = await response.json();
                 
-                // Display NFT data
-                document.getElementById('nft-image').src = data.image_url;
-                document.getElementById('nft-name').innerText = data.name;
+                // Display the NFT data
+                document.getElementById('nft-image').src = data.image_url || data.image;
+                document.getElementById('nft-name').innerText = data.name || 'NFT Name Not Available';
+                document.getElementById('nft-description').innerText = data.description || 'No description available.';
             } catch (error) {
                 console.error('Error fetching NFT data:', error);
                 document.getElementById('nft-name').innerText = 'Failed to load NFT';
