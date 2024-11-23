@@ -1,0 +1,137 @@
+<!-- <center><img src="/Seattle_2024/IMG_1513.jpeg" alt="Seattle_2024/IMG_1513.jpeg" width="300" height="400"></center> -->
+
+<!-- <a href="https://address.com">Label</a> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4/16/2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        Back to <a href="index">Homepage</a>
+
+        <h1>iBlog</h1>
+
+        <h2>04/16/2024</h2>
+        <p>16/04/2024   LORA GPS Transmitter/Receivers<br><br>
+
+Raspberry Pi 4 Model B - 8 GB RAM PID: 4564<br>
+SBC (single board computer)<br>
+sudo apt-get update (update list of available packages)<br>
+sudo apt-get upgrade (update all software)<br>
+sudo apt autoremove (remove packages/software that isn’t required)<br><br>
+
+Adafruit LoRa Radio Bonnet with OLED - RFM95W @ 915MHz - RadioFruit PID: 4074<br>
+
+Adafruit Feather 32u4 RFM95 LoRa Radio- 868 or 915 MHz - RadioFruit PID: 3078<br>
+SDR (software defined radio)<br>
+SX1276 LoRa® based module<br>
+
+TFT FeatherWing - 2.4" 320x240 Touchscreen for all Feathers PID: 3315<br>
+
+GPS<br>
+
+Adafruit Ultimate GPS Breakout - 66 channel w/10 Hz updates - Version 3 PID: 746<br>
+Firmware version AXN_2.51_3339_17112000,0004,16165,1.0*56<br>
+
+NMEA (National Marine Electronics Association) to decimal degrees<br>
+DDMM.MMMM<br>
+(D)DD+(MM.MMMM/60)<br>
++4708.9380N<br>
+47+(08.9380/60) = 47.1490<br>
+-9331.1494W<br>
+-93+(-31.1494/60) = 93.5192 //be careful of the negative sign<br>
++47.1490N -93.5192W<br>
+
+LoRa Math<br><br>
+
+A byte = 8 bits<br><br>
+
+LoRaWAN protocol adds at least 13 bytes to the application payload<br><br>
+
+Note that all the combinations of spreading factors and bandwidth are not orthogonal<br><br>
+
+Spreading Factor (SF): Determines how much the signal is spread out in time. Higher SF means more spreading, which increases robustness but lowers data rate.<br><br>
+
+Modulation: Refers to how digital data is encoded onto the signal. In LoRa, it's done through a technique called chirp spread spectrum (CSS), where the signal's frequency changes over time.<br><br>
+
+chirps represent the frequency variation over time, and chips represent the basic unit of time used for encoding digital data<br><br>
+
+Data Rate (DR) = BW / (2^SF)<br>
+-   DR is the data rate in bits per second (bps)<br>
+-   BW is the bandwidth in Hertz (Hz) LoRa has three bandwidths (125kHz (125,000 Hz), 250kHz (250,000 Hz), & 500kHz (500,000 Hz))<br>
+-   SF is the spreading factor, which is a unitless value typically ranging from 7 to 12<br>
+
+Chirp rate = BW*(Symbol rate)<br>
+
+Chirp rate = BW* BW / (2^SF)<br>
+
+symbol length in bits=2^sf<br>
+
+Number of symbols = (payload size in bytes*8)/(symbol length in bits)<br>
+
+In LoRa modulation, each chip is 1 bit<br>
+</p>
+
+<p>\[Maximum Payload Size = ((Symbol Rate * Bandwidth)/(2^sf)) - Overhead\]</p>
+        
+        <p>End of blog. Thank you for reading!</p>
+
+        Back to <a href="index">Homepage</a><br><br>
+
+        © 2024. This work by Isaiah Keating is openly licensed via <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    </div>
+</body>
+
+</html>
