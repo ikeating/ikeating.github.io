@@ -1,0 +1,221 @@
+<!--
+    Isaiah Keating
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12/09/2024</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        canvas {
+            border: 1px solid black;
+        }
+        
+    </style>
+
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+
+        Back to <a href="index">Homepage</a>
+
+        <h1>iBlog</h1>
+
+        <h2>12/09/2024</h2>
+        <p>
+        <!--
+
+            the stuff....
+
+            <center><img src="/Seattle_2024/IMG_1513.jpeg" alt="Seattle_2024/IMG_1513.jpeg" width="300" height="400"></center>
+
+            <a href="https://address.com">Label</a>
+
+            <p>\[Maximum Payload Size = \frac{Symbol Rate * Bandwidth}{2^{sf}} - Overhead\]</p>
+
+        -->
+        On 09/16/2021, I was prescribed Atorvastatin and have since been taking one 10MG tablet per day.<br><br>
+
+    <canvas id="cholesterolGraph" width="800" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('cholesterolGraph');
+        const ctx = canvas.getContext('2d');
+
+        // Your data: Dates and cholesterol levels
+        const data = [
+            { date: "2013-04-16", cholesterol: 103 },
+            { date: "2015-04-01", cholesterol: 113 },
+            { date: "2020-02-13", cholesterol: 160 },
+            { date: "2021-09-16", cholesterol: 263 },
+            { date: "2022-09-19", cholesterol: 154 },
+            { date: "2023-10-20", cholesterol: 135 },        
+            { date: "2024-12-05", cholesterol: 159 },
+        ];
+
+        // Extract cholesterol range
+        const cholesterols = data.map(d => d.cholesterol);
+        const minCholesterol = Math.min(...cholesterols);
+        const maxCholesterol = Math.max(...cholesterols);
+
+        // Map a value to the canvas
+        function map(value, minInput, maxInput, minOutput, maxOutput) {
+            return ((value - minInput) / (maxInput - minInput)) * (maxOutput - minOutput) + minOutput;
+        }
+
+        // Draw title
+        function drawTitle() {
+            ctx.font = "20px Arial";
+            ctx.textAlign = "center";
+            ctx.fillStyle = "black";
+            ctx.fillText("LDL Cholesterol Levels Over Time", canvas.width / 2, 30);
+        }
+
+        // Draw axes
+        function drawAxes() {
+            ctx.beginPath();
+            ctx.moveTo(50, 350); // Y-axis bottom
+            ctx.lineTo(50, 50);  // Y-axis top
+            ctx.moveTo(50, 350); // X-axis start
+            ctx.lineTo(750, 350); // X-axis end
+            ctx.stroke();
+
+            // Axis titles
+            ctx.font = "16px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("Date", 400, 390); // X-axis title
+            ctx.save();
+            ctx.translate(20, 200); // Rotate for Y-axis title
+            ctx.rotate(-Math.PI / 2);
+            ctx.fillText("LDL Cholesterol Level", 0, 0);
+            ctx.restore();
+        }
+
+        // Draw grid and labels
+        function drawGridAndLabels() {
+            ctx.font = "12px Arial";
+            ctx.fillStyle = "black";
+
+            const totalPoints = data.length;
+            const xSpacing = (750 - 50) / (totalPoints - 1); // Even spacing for X-axis
+
+            // X-axis labels (Dates)
+            data.forEach((point, index) => {
+                const x = 50 + index * xSpacing; // Evenly spaced x-coordinate
+                ctx.fillText(point.date, x, 370);
+                ctx.beginPath();
+                ctx.moveTo(x, 350);
+                ctx.lineTo(x, 50);
+                ctx.strokeStyle = "#ddd";
+                ctx.stroke();
+            });
+
+            // Y-axis labels (Cholesterol levels)
+            for (let i = minCholesterol; i <= maxCholesterol; i += 10) {
+                const y = map(i, minCholesterol, maxCholesterol, 350, 50);
+
+                // Draw grid line and label only if it's within the canvas range
+                if (y >= 50 && y <= 350) {
+                    ctx.fillText(i, 40, y + 5);
+                    ctx.beginPath();
+                    ctx.moveTo(50, y);
+                    ctx.lineTo(750, y);
+                    ctx.strokeStyle = "#ddd";
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Plot data
+        function plotData() {
+            const totalPoints = data.length;
+            const xSpacing = (750 - 50) / (totalPoints - 1); // Even spacing for X-axis
+
+            data.forEach((point, index) => {
+                const x = 50 + index * xSpacing; // Evenly spaced x-coordinate
+                const y = map(point.cholesterol, minCholesterol, maxCholesterol, 350, 50);
+
+                // Draw the point
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, 2 * Math.PI);
+                ctx.fillStyle = "blue";
+                ctx.fill();
+
+                // Draw a line connecting this point to the previous point
+                if (index > 0) {
+                    const prevX = 50 + (index - 1) * xSpacing;
+                    const prevY = map(data[index - 1].cholesterol, minCholesterol, maxCholesterol, 350, 50);
+
+                    ctx.beginPath(); // Start a new path for this segment
+                    ctx.moveTo(prevX, prevY);
+                    ctx.lineTo(x, y);
+                    ctx.strokeStyle = "blue";
+                    ctx.stroke();
+                }
+            });
+        }
+
+        // Draw everything
+        drawTitle();
+        drawAxes();
+        drawGridAndLabels();
+        plotData();
+    </script>
+        </p>
+        
+        <p>End of blog. Thank you for reading!</p>
+
+        Back to <a href="index">Homepage</a><br><br>
+
+        © 2024. This work by Isaiah Keating is openly licensed via <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    </div>
+</body>
+
+</html>
