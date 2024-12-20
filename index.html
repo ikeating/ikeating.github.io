@@ -116,7 +116,20 @@
   </style>
 </head>
 <body>
-
+  
+<script>
+// When the page is unloaded, save the scroll position
+window.onbeforeunload = function() {
+sessionStorage.setItem('scrollPosition', window.scrollY);
+};
+// When the page is loaded, restore the scroll position
+window.onload = function() {
+const scrollPosition = sessionStorage.getItem('scrollPosition');
+if (scrollPosition) {
+window.scrollTo(0, scrollPosition);
+}
+};
+</script>
   <h1>iBlog</h1>
 
   <h2><center>
