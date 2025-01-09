@@ -1,0 +1,114 @@
+<!--
+    Isaiah Keating
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venn Diagram</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .venn-container {
+            position: relative;
+            width: 400px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .circle {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        .circle-left {
+            left: 40px;
+            background-color: rgba(255, 99, 132, 0.5); /* Set A Color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .circle-right {
+            left: 150px; /* Move Set B slightly to the right */
+            background-color: rgba(54, 162, 235, 0.5); /* Set B Color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlap-value {
+            position: absolute;
+            top: 70px; /* Adjusted position to align the "3" in the middle of both circles */
+            left: 175px; /* Moved slightly right to sit in the overlap of Set A and Set B */
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index">Back to Homepage</a>
+
+        <h1>iBlog</h1>
+        <h2>Venn Diagram to calculate GCF & LCM of two numbers</h2>
+Prime factors of 24 are in Set A.  Prime factors of 39 are in Set B.<br>
+The GCF of 24 & 39 is in both Set A & B which is 3<br>
+LCM of 24 & 39 is 2*2*2*3*13 = 312<br>
+LCM = GCF * Remaining Prime Factors<br><br>
+        <!-- Manual Venn Diagram using HTML and CSS -->
+        <div class="venn-container">
+            <!-- Set A Circle with Three Vertically Aligned 2's -->
+            <div class="circle circle-left">
+                <div>2</div>
+                <div>2</div>
+                <div>2</div>
+            </div>
+
+            <!-- Set B Circle (Moved slightly to the right) -->
+            <div class="circle circle-right">
+                <div>13</div>
+            </div>
+
+            <!-- Overlap Section (Value "3" Positioned in the Overlap) -->
+            <div class="overlap-value">3</div>
+        </div>
+
+        <p>End of blog. Thank you for reading!</p>
+        <a href="index">Back to Homepage</a><br><br>
+        © 2025. This work by Isaiah Keating is openly licensed via <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+    </div>
+</body>
+
+</html>
